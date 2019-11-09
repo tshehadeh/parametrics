@@ -1,0 +1,44 @@
+float t;
+int lines = 50;
+float x = 1.1;
+
+void setup(){
+  size(600,600);
+}
+void draw(){
+  background(55);
+  stroke(77,195,255);
+  strokeWeight(5);
+  translate(width/2, height/2);
+  for(int i = 0; i < lines; i++){
+    
+    //line(x(t + i), y(t + i), x1(t + i), y1(t + i));
+    
+    // DRAWS LINES BETWEEN POINTS, mess around with what is in parentheses to achieve cool effects
+    line(x(t + t/(i/x)), y(t + t/(i/x)), x1(t + t/(i/x)), y1(t + t/(i/x)));
+   
+    //line(x(t + 3*i), y(t + 3*i), x1(t + 3*i), y1(t + 3*i));
+  }
+  
+  t+=0.5;
+}
+
+// PARAMETRIC EQUATIONS, mess around with sin, cos, tan. try arcsin, inverses, negatives, exponential functions.
+
+float x(float t){
+  
+  return sin(t / 10) * 100 + sin(t / 5) * 20;
+}
+
+
+float y(float t){
+  return cos(t / 10) * 100;
+}
+float x1(float t){
+  return sin(t / 10) * 200 + sin(t) * 2;
+}
+
+
+float y1(float t){
+  return cos(t / 50) * 100 + cos(t / 12) *100;
+}
